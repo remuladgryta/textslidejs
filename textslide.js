@@ -18,7 +18,7 @@ function textslide(){
 window.onload = function(){
   let messages_ta = document.querySelector('#messages');
   lines = messages_ta.value.split('\n');
-  if(lines.length < 2 && lines[0] == ''){
+  if(lines.length < 2 && lines[0].trim() == ''){
     lines = ['This', 'Is', 'A proof of concept'];
   }
   textslide();
