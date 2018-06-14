@@ -1,0 +1,29 @@
+body {
+  background-color: #00FF00;
+  overflow:hidden;
+}
+
+p {
+  color: #87CCD4;
+  font-size: 60pt;
+  margin-left: -100%;
+  width: 100%;
+  animation-duration: 3s; /* <- Total time for each message to slide in, stop, and slide out */
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+  }
+  25% { /* <- Stop after this much of animation-duration */
+    margin-left: 30%;
+  }
+  
+  50% { /* <- Start sliding out after this much of animation-duration */
+    margin-left: 30%;
+  }
+  to {
+    margin-left: -100%;
+  }
+}
