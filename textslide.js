@@ -1,19 +1,29 @@
 var lines = [];
 
 function textslide(){
-  let currentline = 0;
-  let el = document.createElement('p');
-  function listener(event){
-    el.parentNode.removeChild(el);
+  let currentline = -1;
+  let el;
+  function nextline(){
     currentline = (currentline + 1) % lines.length;
     el = document.createElement('p');
     el.innerHTML = lines[currentline];
+    el.className = 'in';
     el.addEventListener("animationend", listener);
     document.body.appendChild(el);
   }
-  el.innerHTML = lines[currentline];
-  el.addEventListener("animationend", listener);
-  document.body.appendChild(el);
+  function listener(event){
+    if (event.animationName === 'slidein'){
+      el.className = 'scrl';
+    }
+    if (event.animationName === 'scrl'){
+      el.className = 'out';
+    }
+    if (event.animationName === 'slideout'){
+      el.parentNode.removeChild(el);
+      nextline();
+    }
+  }
+  nextline();
 }
 window.onload = function(){
   let messages_ta = document.querySelector('#messages');

@@ -1,27 +1,54 @@
 body {
-  background-color: #00FF00;
+  background-color: rgba(#00FF0000);
   overflow:hidden;
 }
 
 p {
   color: #87CCD4;
   font-size: 60pt;
-  margin-left: -100%;
+  /*margin-left: -100%;*/
   width: 100%;
-  animation-duration: 3s; /* <- Total time for each message to slide in, stop, and slide out */
+  text-align: center;
+}
+.in {
   animation-name: slidein;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+}
+
+.scrl {
+  animation-name: scrl;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+
+.out {
+  animation-name: slideout;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
 }
 
 @keyframes slidein {
   from {
     margin-left: 100%;
   }
-  25% { /* <- Stop after this much of animation-duration */
-    margin-left: 30%;
+  to {
+    margin-left: 10%;
   }
-  
-  50% { /* <- Start sliding out after this much of animation-duration */
-    margin-left: 30%;
+}
+
+@keyframes scrl {
+  from {
+    margin-left: 10%;
+  }
+  to {
+    margin-left: -20%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    margin-left: -20%;
   }
   to {
     margin-left: -100%;
