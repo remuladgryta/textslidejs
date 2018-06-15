@@ -4,6 +4,7 @@ body {
 }
 
 p {
+  font-family: 'Oswald', sans-serif;
   color: #87CCD4;
   font-size: 60pt;
   /*margin-left: -100%;*/
