@@ -34,22 +34,22 @@ p {
     margin-left: 100%;
   }
   to {
-    margin-left: 10%;
+    margin-left: 25%;
   }
 }
 
 @keyframes scrl {
   from {
-    margin-left: 10%;
+    margin-left: 25%;
   }
   to {
-    margin-left: -20%;
+    margin-left: -25%;
   }
 }
 
 @keyframes slideout {
   from {
-    margin-left: -20%;
+    margin-left: -25%;
   }
   to {
     margin-left: -100%;
