@@ -27,12 +27,19 @@ function textslide(){
 }
 window.onload = function(){
   let messages_ta = document.querySelector('#messages');
-  lines = messages_ta.value.split('\n');
-  if(lines.length < 2 && lines[0].trim() == ''){
-    lines = ['This', 'Is', 'A proof of concept'];
-  }
+  loadLines(messages_ta);
   textslide();
-  messages_ta.addEventListener('input', function(e){
-    lines = messages_ta.value.split('\n');  
-  });
+  messages_ta.addEventListener('input', e => loadLines(messages_ta));
+}
+
+function loadLines(textarea){
+  lines = textarea.value.split('\n');
+  for (i in lines){
+    lines[i] = wrapLowercase(lines[i]);
+  }
+}
+
+function wrapLowercase(text){
+  pattern = /([^A-Z]+)/g; //Match all sequences of characters that are not uppercase.
+  return text.replace(pattern, "<span class='lower'>$1</span>");
 }
