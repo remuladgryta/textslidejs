@@ -1,10 +1,15 @@
+@font-face {
+  font-family: 'bebas-neue-bold';
+  src: local('Bebas Neue Bold'), local('Bebas-Neue-Bold'), url('font/BebasNeue/BebasNeue Bold.otf'), url("font/BebasNeue/TTF's/BebasNeue Bold.ttf");
+}
+
 body {
   background-color: rgba(#00FF0000);
   overflow:hidden;
 }
 
 p {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'bebas-neue-bold', 'Oswald', sans-serif;
   color: #165858;
   font-size: 60pt;
   /*margin-left: -100%;*/
